@@ -274,7 +274,7 @@ mongod --dbpath /mongo_data/play
 ```
 
 
-# Java
+# Install Java
 - The Java JDK download link. This was hard to find (the JRE link was easy). To find this link I had to search for the name of the download file, in this case it was jdk-7u55-macosx-x64.dmg
 [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html](Oracle's download site)
 
@@ -286,8 +286,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 ```
 
 
-# Development Utilities
-### CLOC - Count Lines of Code
+# Install CLOC - Count Lines of Code
 
 This counts lines of code, and has many options.
 
