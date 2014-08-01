@@ -1,10 +1,7 @@
 # setup-mean-ts
 
-Instructions for how to set up a MEAN + Typescript development environment on Mac, with free software.
+Instructions for how to set up a MEAN (MongoDB / Express.js / Angular.js / Node.js) + Typescript development environment on Mac, with free software.
 
-
-
-# Setup Node.js Development Environment on Mac
 You should have OSX Mavericks (10.9) or later.  
 If you don't find the answers you need in these instructions, you may [find additional help here](http://bit.ly/19Fksyd).
 
