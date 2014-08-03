@@ -350,6 +350,34 @@ cloc --exclude-lang=HTML,Javascript schema src test
 
 
 
+# Install generateCodeVocabulary
+
+This determines the symbols used in a collection of source files, and counts their use.
+
+By keeping the generated vocabulary files for each version of code, changes can be verified before submitting code to your version control system.
 
 
+#### Install
+
+**Dependencies**: This uses CLOC.
+
+
+This utility is part of this **setup-mean-ts** repo.
+Copy the files to /usr/local/bin:
+
+```
+chmod +x generateCodeVocabulary.py
+sudo cp generateCodeVocabulary.* /usr/local/bin
+```
+
+#### Examples
+These commands are run as part of our **reports** target of make:
+
+```
+	generateCodeVocabulary.py --ext ts --out reports/client.vocabulary.json src/client
+	generateCodeVocabulary.py --ext ts --out reports/server.vocabulary.json src/server
+	generateCodeVocabulary.py --ext ts --out reports/test.vocabulary.json test
+	-rm reports/all.vocabulary.json
+	generateCodeVocabulary.py --ext vocabulary.json --out reports/all.vocabulary.json reports
+```
 

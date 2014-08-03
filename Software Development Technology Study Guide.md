@@ -126,6 +126,7 @@ Prerequisites:
 Resources:
 
 - [http://git-scm.com/]()
+- [Explanation of the Staging Area](http://www.gitguys.com/topics/whats-the-deal-with-the-git-index)
 
 
 Some useful commands:
@@ -136,6 +137,15 @@ Some useful commands:
 - git stash drop
 - git stash -p show
 - git archive --format=tar b5ba736 >~/tmp/b5ba736.tar
+
+# MarkDown
+Prerequisites:
+
+- familiarity with layout markup languages
+
+Resources:
+
+- You can learn the [syntax and options](http://daringfireball.net/projects/markdown/syntax) from the author MarkDown.
 
 
 # Chrome Debugger
