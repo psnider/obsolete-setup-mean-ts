@@ -352,7 +352,17 @@ cloc --exclude-lang=HTML,Javascript schema src test
 
 # Install generateCodeVocabulary
 
-This determines the symbols used in a collection of source files, and counts their use.
+#### Description
+
+**generateCodeVocabulary** determines the symbols used in a collection of source files, and counts their use.  
+
+It strips out all comments, integers, single-line strings, 
+and single-line slash delimited regular expressions before collecting the vocabulary. 
+This results in a vocabulary that contains all program symbols and keywords.
+
+Warning: it does not work on files that have strings or regular expressions that span multiple lines.
+
+This has been tested with TypeScript/Javascript, but should work for any language that has a CLOC configuration, and that has C-style strings, and slash delimited regular expressions. 
 
 By keeping the generated vocabulary files for each version of code, changes can be verified before submitting code to your version control system.
 
