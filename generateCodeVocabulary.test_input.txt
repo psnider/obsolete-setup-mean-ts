@@ -1,0 +1,9 @@
+~`@#%^&*()-+={}[]|\:;<>,.
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          _a
+0123456789
+  0xab
+"a double quote string: with double quote=\", single quote=', slash quote=/\n"
+'a single quote string: with double quote=", single quote=\', slash quote=/\n'
+/a slash quote string: with double quote=", single quote=', slash quote=\/$/

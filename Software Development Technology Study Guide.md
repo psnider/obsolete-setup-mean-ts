@@ -172,3 +172,4 @@ Logs each time the function is executed
 - [What can you do with PostgreSQL and JSON?](http://clarkdave.net/2013/06/what-can-you-do-with-postgresql-and-json/)
 - [A popular DB binding for PostGres](https://github.com/brianc/node-postgres)
 - [SVG editor](http://sourceforge.net/projects/inkscape/?source=dlp)
+- [Overview of NoSQL Databases](http://www.getfilecloud.com/blog/2014/08/leading-nosql-databases-to-consider/?utm_source=dbweekly&utm_medium=email#.VAChb4CwJIt)

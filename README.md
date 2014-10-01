@@ -5,7 +5,7 @@ Instructions for how to set up a MEAN (MongoDB / Express.js / Angular.js / Node.
 You should have OSX Mavericks (10.9) or later.  
 If you don't find the answers you need in these instructions, you may [find additional help here](http://bit.ly/19Fksyd).
 
-## Install Google Chrome Web Browser
+# Install Google Chrome Web Browser
 **Dependencies**: No dependencies. You may set up Chrome whenever you like.
 We use [Google Chrome](https://www.google.com/intl/en/chrome/browser/), because it:
 
@@ -13,7 +13,7 @@ We use [Google Chrome](https://www.google.com/intl/en/chrome/browser/), because 
 - Integrates well with Google tools.
 - Has a powerful Javascript debugger.
 
-### JSON Viewer
+## JSON Viewer
 
 The [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) Chrome extension allows viewing of JSON files directly in Chrome.
 
@@ -31,7 +31,7 @@ and it should collapse sections when you click on minus signs,
 and expand sections when you click on plus signs.
  
 
-### MarkDown Viewer
+## MarkDown Viewer
 
 The [Markdown Preview](https://chrome.google.com/webstore/detail/markdown-preview/jmchmkecamhbiokiopfpnfgbidieafmd?hl=en) Chrome extension allows viewing of MarkDown files directly in Chrome.
 
@@ -44,11 +44,58 @@ Confirm the installation:
 If you have a Markdown file on your local machine, locate it with Finder, then drag & drop it into Chrome.
 It should display nicely formatted, as it would on Gitub.
 
+# Install an Editor
+<details>
+<summary>Atom</summary>
+## Install Atom Editor
+**Dependencies**: No dependencies. You may set up Atom whenever you like.  
+Download from [https://atom.io/](https://atom.io/)
+
+### Configure to use Syntax highlighting for TypeScript
+
+```
+cd /tmp  
+git clone https://github.com/stoffera/textmate-typescript/
+```
+
+then convert the package and install it into Atom:
+
+```
+apm init --package ~/.atom/packages/language-typescript --convert /tmp/textmate-typescript/TypeScript.tmBundle
+```
+
+You may have to restart Atom for this change to take effect.
+
+### Configure so tabs are set to 4 spaces for all text files.
+
+In Settings, under Editor Settings, select "Soft Tabs" , and set "Tab Length" to 4.
+
+### Configure so whitespace is standardized upon file save.
+
+#### Strip trailing whitespace from all lines
+
+v 0.129, and [atom/whitespace](https://github.com/atom/whitespace) v0.25, 
+stripping trailing whitespace is a global setting.
+
+#### Convert tabs to spaces upon file save.
+
+This is done while editing, so no need for a separate command.
+
+#### Exclude some directories from file search
+
+This is not supported yet in Atom. See [find-and-replace/issues/149](https://github.com/atom/find-and-replace/issues/149)
+
+</details>
+
+
+<details>
+<summary>TextMate</summary>
+
 ## Install TextMate Editor
 **Dependencies**: No dependencies. You may set up TextMate whenever you like.
 Select version 2.* from [http://macromates.com/download](http://macromates.com/download)
 Once it is downloaded, you must unzip it. You can do this from **Finder** (select the TextMat_*tbz file, then Menu-click, and choose open).
-The app will be extract in place, so you must now move the TextMate.app file into your /Applications folder.
+The app will be extracted in place, so you must now move the TextMate.app file into your /Applications folder.
 
 
 ### Configure so tabs are set to 4 spaces for all text files.
@@ -78,6 +125,13 @@ Then in the drawer put:
 These instructions were taken from the article [Strip trailing whitespace on Save with …callbacks!](http://tm2tips.tumblr.com/post/42657705618/strip-trailing-whitespace-on-save-with-callbacks)
 
 #### Convert tabs to spaces upon file save.
+Specify that our Makefiles are the correct type, by running the following two commands:
+
+```
+echo '[ Makefile.* ]' >> ~/.tm_properties
+echo 'fileType             = "source.makefile"' >> ~/.tm_properties
+```
+
 Open the bundle editor (⌃⌥⌘B) or "Bundles" → "Edit Bundles..."  
 and open "Source" → "Menu Actions" → "Convert Tabs to Space".  
 
@@ -87,6 +141,7 @@ Then in the drawer put:
 - Semantic Class: **callback.document.will-save**
 - Input: **Document**
 - Output: **Replace Document**
+- Caret Placement: Character Interpolaion
 
 Confirm the installation:
 Create a file with a ".txt" extension. Add a line of text with preceding tabs and ending with some spaces.
@@ -112,8 +167,10 @@ Run this shell command to add this configuration to the TextMate config file for
 echo 'excludeInFolderSearch = "{$excludeInFolderSearch,$extraExcludes,node_modules,bower_components,generated,amd,commonjs,cache,doc}"' >> ~/.tm_properties
 ```
 
+</details>
+
 <a name="GitHub App"></a> 
-## Install GitHub App
+# Install GitHub App
 **Dependencies**: You must have a GitHub account. There are no dependencies on any other tools. You may set up the GitHub app whenever you like.
 Get GitHub app from: [http://mac.github.com/](http://mac.github.com/)  
 You should also have SSH keys. You can set them up by following this article: [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
@@ -128,7 +185,7 @@ You should also have SSH keys. You can set them up by following this article: [h
 This should give you a functional GUI for managing your workspace with git.  
 However, before you start using the workspace, you must finish the remaining configuration in these instructions.
 
-## Install XCode and the Command Line Tools
+# Install XCode and the Command Line Tools
 **Dependencies**: XCode 5.0.2 requires OSX Mavericks/10.9.
 
 You may set up Xcode whenever you like.
@@ -144,7 +201,7 @@ xcode-select --install
 ```
 
 
-## Install Node.js and Npm
+# Install Node.js and Npm
 **Dependencies**: No dependencies. You may set up Node.js and npm whenever you like.
 Get Node.js from [http://nodejs.org/download/'](http://nodejs.org/download/), then find the button below on that page, and click it to download.  
 ![](images/Nodejs Download.png)  
@@ -173,8 +230,15 @@ echo 'export PATH="$PATH:/usr/local/share/npm/bin"' >>~/.profile
 echo 'export NODE_PATH="/usr/local/share/npm/lib:./commonjs"' >>~/.profile
 ```
 
-### Dependent Packages
+## Dependent Packages
 We also need to install several support packages, globally, so they can be accessed from the command line, and by any project:
+
+Note that npm has a bug around versions 1.4.14 in which it ignores the prefix setting in the ~/.npmrc file.
+If this happens to you, a workaround is to specify the prefix directly on the command line as in:
+
+```
+npm install -g --prefix=$(npm config get prefix) typescript
+```
 
 - Typescript  
 We'll use [TypeScript](http://www.typescriptlang.org) whenever possible, because it adds strong typing to javascript.  
@@ -211,16 +275,16 @@ We'll use [express](https://npmjs.org/package/express), because it provides simp
   ```
 
 
-## Install MarkDown Support
+# Install MarkDown Support
 **Dependencies**: No dependencies. You may set up Mou whenever you like.
 
-### Install Mou WYSIWYG Editor
+## Install Mou WYSIWYG Editor
 
 Don't use a normal text editor for MarkDown (*.md) files. Your text editor may strip significant whitespace from your MarkDown documents.  
 Instead, use [Mou.app](http://mouapp.com/).
 
 
-## Install Bower Package Manager
+# Install Bower Package Manager
 
 See the Bower page: [http://http://bower.io/](http://http://bower.io/)
 
@@ -231,7 +295,7 @@ See the Bower page: [http://http://bower.io/](http://http://bower.io/)
   ```
 
 
-## Install Brew Package Manager
+# Install Brew Package Manager
 
 See the Homebrew page: [http://brew.sh](http://brew.sh)
 
@@ -247,7 +311,7 @@ See the Homebrew page: [http://brew.sh](http://brew.sh)
   brew doctor
   ```
 
-## Install MongoDB
+# Install MongoDB
 **Dependencies**: You must have brew, and XCode 5.0.2.  
 **Reference**: [tutorial/install-mongodb-on-os-x](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
 
@@ -342,7 +406,7 @@ Typescript
 ```
 
 
-#### Examples
+### Examples
 ```
 cloc schema src test  
 cloc --exclude-lang=HTML,Javascript schema src test
@@ -384,10 +448,9 @@ sudo cp generateCodeVocabulary.* /usr/local/bin
 These commands are run as part of our **reports** target of make:
 
 ```
-	generateCodeVocabulary.py --ext ts --out reports/client.vocabulary.json src/client
-	generateCodeVocabulary.py --ext ts --out reports/server.vocabulary.json src/server
-	generateCodeVocabulary.py --ext ts --out reports/test.vocabulary.json test
-	-rm reports/all.vocabulary.json
-	generateCodeVocabulary.py --ext vocabulary.json --out reports/all.vocabulary.json reports
+    generateCodeVocabulary.py --ext ts --out reports/client.vocabulary.json src/client
+    generateCodeVocabulary.py --ext ts --out reports/server.vocabulary.json src/server
+    generateCodeVocabulary.py --ext ts --out reports/test.vocabulary.json test
+    -rm reports/all.vocabulary.json
+    generateCodeVocabulary.py --ext vocabulary.json --out reports/all.vocabulary.json reports
 ```
-

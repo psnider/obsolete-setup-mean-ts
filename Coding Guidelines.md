@@ -21,3 +21,16 @@ error_text: A description of an error suitable for display to a human, perhaps a
 # Style
 - Do not let strings span a line
 Strings that span multiple lines are impossible to analyze with simple script tools (e.g. generateCodeVocabulary.py)
+
+# Debug Support
+
+chai['config'].includeStack = true; // turn on stack trace
+
+
+    /*
+    * DEBUG IDIOMS:
+    *   use this line to print the errors
+               console.log('report.errors=' + util.inspect(report.errors));
+    */
+
+
