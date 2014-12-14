@@ -19,8 +19,11 @@ error_text: A description of an error suitable for display to a human, perhaps a
 
 
 # Style
+- localization function names start with 'localize'
 - Do not let strings span a line
 Strings that span multiple lines are impossible to analyze with simple script tools (e.g. generateCodeVocabulary.py)
+- Prefer enum values that can also be used as unquoted keys.  
+This also makes them easier to read in URLs.
 
 # Debug Support
 
@@ -32,5 +35,3 @@ chai['config'].includeStack = true; // turn on stack trace
     *   use this line to print the errors
                console.log('report.errors=' + util.inspect(report.errors));
     */
-
-

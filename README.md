@@ -77,6 +77,8 @@ In Settings, under Editor Settings, select "Soft Tabs" , and set "Tab Length" to
 v 0.129, and [atom/whitespace](https://github.com/atom/whitespace) v0.25, 
 stripping trailing whitespace is a global setting.
 
+Do not enable this, because it causes problems for MarkDown files.
+
 #### Convert tabs to spaces upon file save.
 
 This is done while editing, so no need for a separate command.
@@ -85,8 +87,16 @@ This is done while editing, so no need for a separate command.
 
 This is not supported yet in Atom. See [find-and-replace/issues/149](https://github.com/atom/find-and-replace/issues/149)
 
+### Configure so files are saved upon losing window focus.
+
+From the Settings (⌘,), select Autosave, and check the "Enabled" box.
 </details>
 
+### Set a white cursor
+Install the Atom package: [https://atom.io/packages/white-cursor](white-cursor)
+
+### Enable previewing MarkDown files
+[https://github.com/atom/markdown-preview](markdown-preview)
 
 <details>
 <summary>TextMate</summary>

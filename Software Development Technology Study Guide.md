@@ -2,15 +2,22 @@
 
 # HTML5
 
-Prerequisites:
+### Prerequisites:
 
 - familiarity with layout markup languages
 
-Resources:
+### Resources:
 
 - [http://html5doctor.com/](http://html5doctor.com/) Has up to date references on best practices for HTML5. You can study the element tags from the [http://html5doctor.com/element-index/](element index).
  - This shows recent browser usage statistics globally: [http://gs.statcounter.com/](http://gs.statcounter.com/)  
 - This shows status of each HTML5 feature in major browsers: [http://caniuse.com/](http://caniuse.com/)
+
+### Upcoming:
+four related W3C specifications:
+- Custom Elements - Enables the extension of HTML through custom tags.
+- HTML Imports - Enables packaging of various resources (HTML, CSS, JS, etc.).
+- Template Element - Enables the inclusion of inert HTML in a document.
+- Shadow DOM - Enables encapsulation of DOM and CSS.
 
 # Javascript
 Prerequisites:
@@ -23,6 +30,17 @@ Resources:
 The interpreter allows you to test javascript code in an interactive environment.
 - Javascript function patterns
 [http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
+- [Jeff Harrel of PayPal: 9 Anti-Patterns for Node.js Teams](https://www.youtube.com/watch?v=6phif2t-wj0)
+
+  1. Baggage from your previous technology  
+  - Monolithic Applications
+  - Googling How do you do X in javascript?
+  - Handling Errors
+  - Wrapping everything in Promises
+  - Git URLs in your package.json
+  - Sloppy async code
+  - Having Node do everything
+  - Ignoring the Node ecosystem
 
 
 # TypeScript
@@ -138,6 +156,9 @@ Some useful commands:
 - git stash -p show
 - git archive --format=tar b5ba736 >~/tmp/b5ba736.tar
 
+Git Culture:
+[http://ben.balter.com/2014/11/06/rules-of-communicating-at-github/]()
+
 # MarkDown
 Prerequisites:
 
@@ -149,12 +170,21 @@ Resources:
 
 
 # Chrome Debugger
-Prerequisites:
+### Prerequisites:
 
 - familiarity with javascript
 - familiarity with debuggers
 
-Use these undocumented functions in the console:
+### Helpful console functions
+
+[https://shellycloud.com/blog/2014/11/five-functions-of-the-console-object-you-didnt-know]
+- console.assert(expression, message)
+- console.profile(name)
+- console.time(name)
+- console.table(object)
+
+
+### Use these undocumented functions in the console:
 
 - debug(function_name)
 Puts a breakpoint at the named function
@@ -173,3 +203,19 @@ Logs each time the function is executed
 - [A popular DB binding for PostGres](https://github.com/brianc/node-postgres)
 - [SVG editor](http://sourceforge.net/projects/inkscape/?source=dlp)
 - [Overview of NoSQL Databases](http://www.getfilecloud.com/blog/2014/08/leading-nosql-databases-to-consider/?utm_source=dbweekly&utm_medium=email#.VAChb4CwJIt)
+
+### Facebook Flux
+[http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts]
+[http://scotch.io/tutorials/javascript/build-a-real-time-twitter-stream-with-node-and-react-js]
+[http://scotch.io/tutorials/javascript/getting-to-know-flux-the-react-js-architecture]
+
+
+# General Web Application Information
+
+[http://rauchg.com/2014/7-principles-of-rich-web-applications/]
+
+
+# Code Analysis
+[https://github.com/FGRibreau/check-build]
+- [https://www.npmjs.org/package/jsinspect](jsinspect)
+- [https://github.com/danielstjules/buddy.js](buddy.js)
