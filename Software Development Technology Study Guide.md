@@ -79,7 +79,7 @@ Resources:
 - [The API reference](http://nodejs.org/api)
 - You can ask questions live using a [web-based IRC chat client](https://webchat.freenode.net).  
   Pick any user name, and specify the **node.js** channel.
-
+- [Three Years of Node.js in Production](https://www.joyent.com/developers/videos/reflections-on-three-years-of-nodejs-in-production)
 
 
 # MongoDB
@@ -117,6 +117,7 @@ Prerequisites:
 
 Resources:
 
+- [https://thinkster.io/angulartutorial/a-better-way-to-learn-angularjs/]()
 - [http://docs.angularjs.org/guide/concepts](http://docs.angularjs.org/guide/concepts)  
 Provides a clear overview of the framework.
 - [When to use directives controllers or services](http://kirkbushell.me/when-to-use-directives-controllers-or-services-in-angular/)  
@@ -205,17 +206,36 @@ Logs each time the function is executed
 - [Overview of NoSQL Databases](http://www.getfilecloud.com/blog/2014/08/leading-nosql-databases-to-consider/?utm_source=dbweekly&utm_medium=email#.VAChb4CwJIt)
 
 ### Facebook Flux
-[http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts]
-[http://scotch.io/tutorials/javascript/build-a-real-time-twitter-stream-with-node-and-react-js]
-[http://scotch.io/tutorials/javascript/getting-to-know-flux-the-react-js-architecture]
+[http://scotch.io/tutorials/javascript/learning-react-getting-started-and-concepts]()
+[http://scotch.io/tutorials/javascript/build-a-real-time-twitter-stream-with-node-and-react-js]()
+[http://scotch.io/tutorials/javascript/getting-to-know-flux-the-react-js-architecture]()
 
 
 # General Web Application Information
 
-[http://rauchg.com/2014/7-principles-of-rich-web-applications/]
+[http://rauchg.com/2014/7-principles-of-rich-web-applications/]()
 
 
 # Code Analysis
-[https://github.com/FGRibreau/check-build]
+
+[https://github.com/FGRibreau/check-build]()
 - [https://www.npmjs.org/package/jsinspect](jsinspect)
 - [https://github.com/danielstjules/buddy.js](buddy.js)
+
+
+# Performance Testing
+
+- [wrk - Modern HTTP benchmarking tool](https://github.com/wg/wrk)
+- [ab - Apache HTTP server benchmarking tool](http://httpd.apache.org/docs/2.2/programs/ab.html)
+
+
+
+# Hosting
+
+- [AWS Lambda](http://aws.amazon.com/lambda/)
+- [Joyent](http://www.joyent.com/)
+
+
+# Developement Tools
+- [Node Tools for MS VisualStudio](https://nodejstools.codeplex.com/releases/view/149714?utm_source=nodeweekly&utm_medium=email)
+- [Setup VM on Mac](https://msdn.microsoft.com/en-us/library/windows/apps/jj945425.aspx)

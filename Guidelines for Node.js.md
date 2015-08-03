@@ -16,13 +16,45 @@ External modules can be shared with other projects.
 - use import when appropriate, and not var
 - Keep declaration files in a ./decl directory.  
 And keep imported files in a ./decl/import directory.
+- Reference explicit versions in your package.json files, and update dependent packages explicitly.  
+Many npm packages don't follow semantic versioning properly, so this is the best way to protect your projects.
+
+# npm module creation Guidelines:
+- each package.json must support the test target via:
+```
+  "scripts": {
+    "test": "make test",
+    "postinstall": "make npm-postinstall"
+  },
+```
+See the notes below regarding implementing the npm-postinstall target.
+- All Typescript declarations follow the conventions used by https://github.com/borisyankov/DefinitelyTyped
+  - each declaration file must be in a subdirectory with the same name as its npm package name
+- Each Typescript npm module contains its Typescript declaration files in the **./decl** directory
+- Typescript declaration files should be copied to owning packages upon installation:
+  - A Makefile for a package named PACKAGE and which has declaration files should contain a post-install target similar to:
+```make
+npm-postinstall:
+    # if this install is for a dependent package
+    @if [ -f '../../package.json' ]; then \
+        # copy the declaration files into the requesting project
+        echo This is a dependent package, copying Typescript declaration files into main project... ;\
+        mkdir -p ../../decl ;\
+        cp -r decl/PACKAGE ../../decl;\
+    fi
+```
+<aside class="warning">
+Note that you must use tabs for indentation in Makefiles, and that they don't render properly in MarkDown.
+</aside>
+
+
 
 # Style:
 - Align require statements at column 40  
 Requires are easier to read if aligned. 40 columns allows even space for local and imported package names. 
 - Reference paths should be the shortest path relative to the referencing file's path.  
 And not returning to the root, unless required.
-- 
+
 
 
 # Issues for which I still need to develop guidelines

@@ -53,18 +53,7 @@ Download from [https://atom.io/](https://atom.io/)
 
 ### Configure to use Syntax highlighting for TypeScript
 
-```
-cd /tmp  
-git clone https://github.com/stoffera/textmate-typescript/
-```
-
-then convert the package and install it into Atom:
-
-```
-apm init --package ~/.atom/packages/language-typescript --convert /tmp/textmate-typescript/TypeScript.tmBundle
-```
-
-You may have to restart Atom for this change to take effect.
+From within Atom, search for the atom-typescript add-on, and install it.
 
 ### Configure so tabs are set to 4 spaces for all text files.
 
@@ -213,16 +202,16 @@ xcode-select --install
 
 # Install Node.js and Npm
 **Dependencies**: No dependencies. You may set up Node.js and npm whenever you like.
-Get Node.js from [http://nodejs.org/download/'](http://nodejs.org/download/), then find the button below on that page, and click it to download.  
+Get Node.js v0.12.7 from [http://nodejs.org/download/'](http://nodejs.org/download/), then find the button below on that page, and click it to download.  
 ![](images/Nodejs Download.png)  
-This also installs npm, the node package manager.
+This also installs npm v2.11.3, the node package manager.
 
 ### Configure so sudo isn't Required for Installs
 Create a directory for globally installed npm packages, owned by your user, so that sudo isn't required:
 
 ```
 sudo mkdir /usr/local/share/npm
-sudo chown $user /usr/local/share/npm
+sudo chown $USER /usr/local/share/npm
 sudo chmod 755 /usr/local/share/npm
 ````
 
@@ -253,10 +242,15 @@ npm install -g --prefix=$(npm config get prefix) typescript
 - Typescript  
 We'll use [TypeScript](http://www.typescriptlang.org) whenever possible, because it adds strong typing to javascript.  
 Use npm to install typescript:
+```
+npm install -g typescript
+```
+To update:  
+```
+npm cache clean
+npm update -g typescript
+```
 
-   ```
-   npm install -g typescript
-   ```
 - Test Framework  
 Let's use [Mocha](http://visionmedia.github.io/mocha/) because it is flexible,
 and karma to connect to browsers for the client.  
@@ -283,6 +277,18 @@ We'll use [express](https://npmjs.org/package/express), because it provides simp
   ```
   npm install express
   ```
+
+
+# Install grunt
+```
+npm update -g npm
+npm install -g grunt-cli
+npm install grunt-typescript --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-connect --save-dev
+npm install grunt-contrib-clean --save-dev
+npm install grunt-open --save-dev
+```
 
 
 # Install MarkDown Support
