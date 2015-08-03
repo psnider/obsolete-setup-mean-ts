@@ -79,13 +79,13 @@ This is not supported yet in Atom. See [find-and-replace/issues/149](https://git
 ### Configure so files are saved upon losing window focus.
 
 From the Settings (⌘,), select Autosave, and check the "Enabled" box.
-</details>
 
 ### Set a white cursor
 Install the Atom package: [https://atom.io/packages/white-cursor](white-cursor)
 
 ### Enable previewing MarkDown files
 [https://github.com/atom/markdown-preview](markdown-preview)
+</details>
 
 <details>
 <summary>TextMate</summary>
