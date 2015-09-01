@@ -33,7 +33,7 @@ Contains:
   "scripts": {
     "test": "make test",
     "postinstall": "make npm-postinstall",
-    "preuninstall": "make npm-preuninstall"
+    "uninstall": "make npm-uninstall"
   },
 ```
 [ ] dependencies  
