@@ -42,11 +42,14 @@ We use Atom, v1.1.0 or later.
 **Dependencies**: No dependencies. You may set up Atom whenever you like.  
 Download from [https://atom.io/](https://atom.io/)
 
-Complete the install by unzipping the archive, and dragging the Atom application into your Applications folder. Run Atom and set it to remain in you dock.
+Complete the install by unzipping the archive, and dragging the Atom application into your Applications folder. Run Atom and set it to remain in your dock.
 
 ### Install TypeScript support
 
-From within Atom, search for the *atom-typescript* add-on, and install it.
+From within Atom, search for the *atom-typescript* add-on, and install it.  
+From Settings (⌘,), under Packages, search for *atom-typescript*.
+Find it in the results, and install it.
+
 
 ### Configure so tabs are set to 4 spaces for all text files.
 
@@ -63,6 +66,9 @@ This is standard behavior in Atom v1.1.0, controlled by the *whitespace* package
 #### Convert tabs to spaces upon file save.
 
 From within Atom, search for the *tabs-to-spaces* add-on, and install it.
+
+From Settings (⌘,), under Packages, search for *tabs-to-spaces*.
+Find it in the results, and install it.
 
 Update the general Atom configuration file, ~/.atom/config.cson, by adding the following settings:  
 ```
@@ -184,6 +190,7 @@ npm update typescript
 ```
 - Typescript Declaration Files Manager
 We use the [TypeScript Definition manager for DefinitelyTyped](https://github.com/DefinitelyTyped/tsd) for managing TypeScript declaration files.  
+However, it appears that [Typings is replacing TSD](https://github.com/DefinitelyTyped/tsd/issues/269), so we will be moving to Typings soon.
 
 Use npm to install tsd:
 ```
@@ -226,8 +233,6 @@ See the Bower page: [http://http://bower.io/](http://http://bower.io/)
 # Install MongoDB
 **Dependencies**: You must have brew, and XCode.  
 **Reference**: [tutorial/install-mongodb-on-os-x](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
-
-You may set up MongoDB whenever you like.
 
 Use Homebrew to install MongoDB:
 
