@@ -2,7 +2,7 @@
 
 Instructions for how to set up a MEAN (MongoDB / Express.js / Angular.js / Node.js) + Typescript development environment on Mac, with free software.
 
-You should have OSX Mavericks (10.9) or later.  
+You should have OSX El Capitan (10.11.1) or later.  
 If you don't find the answers you need in these instructions, you may [find additional help here](http://bit.ly/19Fksyd).
 
 # Install Google Chrome Web Browser
@@ -17,6 +17,9 @@ We use [Google Chrome](https://www.google.com/intl/en/chrome/browser/), because 
 
 The [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) Chrome extension allows viewing of JSON files directly in Chrome.
 
+If you have already installed Chrome extensions through your Google account on another machine, then those extensions should already be installed with a new installation once you have logged in to your Google account.
+
+If this is your first time, then follow these instructions.
 Complete the installation:
 
 - Visit [chrome://extensions](chrome://extensions)
@@ -29,35 +32,47 @@ then you should see nicely structured JSON in your browser.
 The document should highlight structure as you move your mouse,
 and it should collapse sections when you click on minus signs,
 and expand sections when you click on plus signs.
- 
+
 
 # Install an Editor
-If you prefer, you can install [TextMate](TextMate-editor-install.md) instead.
+We use Atom, v1.1.0 or later.  
 
+<a name="Atom Editor"></a>
 ## Install Atom Editor
 **Dependencies**: No dependencies. You may set up Atom whenever you like.  
 Download from [https://atom.io/](https://atom.io/)
 
-### Configure to use Syntax highlighting for TypeScript
+Complete the install by unzipping the archive, and dragging the Atom application into your Applications folder. Run Atom and set it to remain in you dock.
 
-From within Atom, search for the atom-typescript add-on, and install it.
+### Install TypeScript support
+
+From within Atom, search for the *atom-typescript* add-on, and install it.
 
 ### Configure so tabs are set to 4 spaces for all text files.
 
-In Settings, under Editor Settings, select "Soft Tabs" , and set "Tab Length" to 4.
+From Settings (⌘,), under Editor Settings:  
+- select "Soft Tabs"
+- set "Tab Length" to 4.
 
 ### Configure so whitespace is standardized upon file save.
 
 #### Strip trailing whitespace from all lines
 
-v 0.129, and [atom/whitespace](https://github.com/atom/whitespace) v0.25, 
-stripping trailing whitespace is a global setting.
-
-Do not enable this, because it causes problems for MarkDown files.
+This is standard behavior in Atom v1.1.0, controlled by the *whitespace* package.
 
 #### Convert tabs to spaces upon file save.
 
-This is done while editing, so no need for a separate command.
+From within Atom, search for the *tabs-to-spaces* add-on, and install it.
+
+Update the general Atom configuration file, ~/.atom/config.cson, by adding the following settings:  
+```
+"*":
+  "tabs-to-spaces":
+    onSave: "untabify"
+".source.makefile":
+  "tabs-to-spaces":
+    onSave: "tabify"
+```
 
 #### Exclude some directories from file search
 
@@ -65,159 +80,65 @@ This is not supported yet in Atom. See [find-and-replace/issues/149](https://git
 
 ### Configure so files are saved upon losing window focus.
 
-From the Settings (⌘,), select Autosave, and check the "Enabled" box.
+From the Settings (⌘,), find *autosave* in Packages, and check the "Enabled" box.
 
 ### Set a white cursor
-Install the Atom package: [white-cursor](https://atom.io/packages/white-cursor)
+From the Settings (⌘,) Install, find and install the *white-cursor* package.
 
 ### Enable previewing MarkDown files
-Install the Atom package: [markdown-preview](https://github.com/atom/markdown-preview)
+This is standard in Atom v1.1.0.
 
 
-<a name="GitHub App"></a> 
+<a name="iTerm2 App"></a>
+# Install iTerm2
+**Dependencies**: none
+
+Install from [https://www.iterm2.com/](https://www.iterm2.com/)
+
+
+
+<a name="GitHub App"></a>
 # Install GitHub App
-**Dependencies**: You must have a GitHub account. There are no dependencies on any other tools. You may set up the GitHub app whenever you like.
+**Dependencies**:  
+- You must have a GitHub account.
+- You should also have SSH keys. You can set them up by following this article: [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
+- There are no dependencies on any other tools. You may set up the GitHub app whenever you like.  
+
+
 Get GitHub app from: [http://mac.github.com/](http://mac.github.com/)  
-You should also have SSH keys. You can set them up by following this article: [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
 
 - Download
 - Move app to Application folder  
-![should look like this](images/GitHub app in Applications.png)
-- Follow instructions for configuration.
-
-
+- Run the app, and follow its configuration instructions.  
+  - Make sure you install the git command line tools.
 
 This should give you a functional GUI for managing your workspace with git.  
 However, before you start using the workspace, you must finish the remaining configuration in these instructions.
 
 # Install XCode and the Command Line Tools
-**Dependencies**: XCode 5.0.2 requires OSX Mavericks/10.9.
+**Dependencies**: XCode 7.0.0 requires OSX Yosemite/10.10.
 
 You may set up Xcode whenever you like.
-You can install XCode from the Apple App Store. Make sure get the correct version for your OSX version.  
-We are using XCode 5.0.2 with OSX 10.9.
+Install XCode from the Apple App Store. Make sure get the correct version for your OSX version.  
+We are using:
+- XCode 7.2.1 on OSX El Capitan/10.11.
+- XCode 7.0.0 on OSX Yosemite/10.10.
 
-Once you have XCode installed, run it, and bring up the toolbar menu XCode -> Preferences,
-and then on the Preferences panel, select the Downloads subpanel, click Components,
-and install Command Line Tools. Or you can start the install from the command line:
+Once you have XCode installed, install Command Line Tools:
 
 ```
 xcode-select --install
 ```
 
-
-# Install Node.js and Npm
-**Dependencies**: No dependencies. You may set up Node.js and npm whenever you like.
-Get Node.js v0.12.7 from [http://nodejs.org/download/](http://nodejs.org/download/), then find the button below on that page, and click it to download.  
-![](images/Nodejs Download.png)  
-This also installs npm v2.11.3, the node package manager.
-
-### Configure so sudo isn't Required for Installs
-Create a directory for globally installed npm packages, owned by your user, so that sudo isn't required:
-
-```
-sudo mkdir /usr/local/share/npm
-sudo chown $USER /usr/local/share/npm
-sudo chmod 755 /usr/local/share/npm
-````
-
-
-Set the directory prefix for global packages:
-
-```
-echo prefix=/usr/local/share/npm >> ~/.npmrc
-```
-
-Add the following lines to your ~/.profile
-
-```
-echo 'export PATH="$PATH:/usr/local/share/npm/bin"' >>~/.profile
-echo 'export NODE_PATH="/usr/local/share/npm/lib:./commonjs"' >>~/.profile
-```
-
-## Dependent Packages
-We also need to install several support packages, globally, so they can be accessed from the command line, and by any project:
-
-Note that npm has a bug around versions 1.4.14 in which it ignores the prefix setting in the ~/.npmrc file.
-If this happens to you, a workaround is to specify the prefix directly on the command line as in:
-
-```
-npm install -g --prefix=$(npm config get prefix) typescript
-```
-
-- Typescript  
-We'll use [TypeScript](http://www.typescriptlang.org) whenever possible, because it adds strong typing to javascript.  
-Use npm to install typescript:
-```
-npm install -g typescript
-```
-To update:  
-```
-npm cache clean
-npm update -g typescript
-```
-
-
-- Typescript Declaration Files Manager
-We'll use the [TypeScript Definition manager for DefinitelyTyped](https://github.com/DefinitelyTyped/tsd) for managing TypeScript declaration files.  
-
-Use npm to install tsd:
-```
-npm install tsd -g
-```
-To update:  
-```
-npm cache clean
-npm update -g tsd
-```
-
-- Test Framework  
-Let's use [Mocha](http://visionmedia.github.io/mocha/) because it is flexible,
-and karma to connect to browsers for the client.  
-Use npm to install both:
-
-   ```
-   npm install -g mocha karma karma-mocha karma-requirejs karma-chrome-launcher karma-firefox-launcher
-   (cd /usr/local/share/npm/bin ; ln -s ../lib/node_modules/karma/bin/karma )
-   ```
-- Source Debugger  
-We'll use [Node Inspector](https://github.com/node-inspector/node-inspector/blob/master/readme.md) for source level debugging of node programs, including mocha tests.  
-Use npm to install node-inspector:
-
-   ```
-   npm install -g node-inspector
-   ```
-
-
-**NOTE: skip this for now, as we don't use the express command from the command line**
-
-- Web Development Framework  
-We'll use [express](https://npmjs.org/package/express), because it provides simple routing.
-
-  ```
-  npm install express
-  ```
-
-
-# Install Bower Package Manager
-
-See the Bower page: [http://http://bower.io/](http://http://bower.io/)
-
-- Install
-
-  ```
-  npm install -g bower
-  ```
-
-
 # Install Brew Package Manager
 
 See the Homebrew page: [http://brew.sh](http://brew.sh)
 
-- Install
+- Install  
+Use the download command from the above page, it should be something like:
 
   ```
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
 - Update the local indexes
 
@@ -226,8 +147,84 @@ See the Homebrew page: [http://brew.sh](http://brew.sh)
   brew doctor
   ```
 
+
+# Install Node.js and Npm
+**Dependencies**:  
+- homebrew (above)
+
+Install using homebrew:
+```
+homebrew install node
+```
+
+As of Nov 8, 2015, this installs:
+- node v5.0.0
+- npm 3.3.9
+
+
+
+## npm
+We no longer use global packages.  
+
+In all cases, use local packages.  
+This better supports deployment and testing in the cloud, where there are no global installs.
+
+### Notes on common packages
+
+- Typescript  
+We use [TypeScript](http://www.typescriptlang.org) whenever possible, because it adds strong typing to javascript.  
+Use npm to install typescript:
+```
+npm install typescript
+```
+To update:  
+```
+npm cache clean
+npm update typescript
+```
+- Typescript Declaration Files Manager
+We use the [TypeScript Definition manager for DefinitelyTyped](https://github.com/DefinitelyTyped/tsd) for managing TypeScript declaration files.  
+
+Use npm to install tsd:
+```
+npm install tsd
+```
+To update:  
+```
+npm cache clean
+npm update tsd
+```
+- Test Framework  
+We use [Mocha](http://visionmedia.github.io/mocha/) because it is flexible,
+and karma to connect to browsers for the client.  
+Use npm to install both:
+
+   ```
+   npm install mocha karma karma-mocha karma-requirejs karma-chrome-launcher karma-firefox-launcher
+   ```
+- Source Debugger  
+We'll use [Node Inspector](https://github.com/node-inspector/node-inspector/blob/master/readme.md) for source level debugging of node programs, including mocha tests.  
+Use npm to install node-inspector:
+
+   ```
+   npm install node-inspector
+   ```
+- Web Development Framework  
+We use [express](https://npmjs.org/package/express), because it provides simple routing.
+  ```
+  npm install express
+  ```
+- Client package management  
+We use bower, when npm isn't supported.
+
+See the Bower page: [http://http://bower.io/](http://http://bower.io/)
+  ```
+  npm install bower
+  ```
+
+
 # Install MongoDB
-**Dependencies**: You must have brew, and XCode 5.0.2.  
+**Dependencies**: You must have brew, and XCode.  
 **Reference**: [tutorial/install-mongodb-on-os-x](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
 
 You may set up MongoDB whenever you like.
@@ -263,6 +260,14 @@ Add these lines to your ~/.profile:
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home
 export PATH=$PATH:$JAVA_HOME/bin
 ```
+
+# Install Redis
+Follow the instructions at: [http://redis.io/download](http://redis.io/download)
+
+# Install Beanstalk Message Queue
+[http://kr.github.io/beanstalkd/download.html](http://kr.github.io/beanstalkd/download.html)
+brew install beanstalkd
+beanstalkd
 
 
 # Install CLOC - Count Lines of Code
@@ -335,13 +340,13 @@ cloc --exclude-lang=HTML,Javascript schema src test
 
 **generateCodeVocabulary** determines the symbols used in a collection of source files, and counts their use.  
 
-It strips out all comments, integers, single-line strings, 
-and single-line slash delimited regular expressions before collecting the vocabulary. 
+It strips out all comments, integers, single-line strings,
+and single-line slash delimited regular expressions before collecting the vocabulary.
 This results in a vocabulary that contains all program symbols and keywords.
 
 Warning: it does not work on files that have strings or regular expressions that span multiple lines.
 
-This has been tested with TypeScript/Javascript, but should work for any language that has a CLOC configuration, and that has C-style strings, and slash delimited regular expressions. 
+This has been tested with TypeScript/Javascript, but should work for any language that has a CLOC configuration, and that has C-style strings, and slash delimited regular expressions.
 
 By keeping the generated vocabulary files for each version of code, changes can be verified before submitting code to your version control system.
 

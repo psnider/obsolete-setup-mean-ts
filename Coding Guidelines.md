@@ -25,6 +25,11 @@ Strings that span multiple lines are impossible to analyze with simple script to
 - Prefer enum values that can also be used as unquoted keys.  
 This also makes them easier to read in URLs.
 
+# Filenames
+The OSX file system, is case-preserving but case insensitive, which can cause problems such as when different developers create a file at the same time with names that differ only be capitalization. To help prevent such problems, follow this file naming guideline from *npm*:  
+- Use lowercase for package names and filenames, as well as for any related naming.
+
+
 # Debug Support
 
 chai['config'].includeStack = true; // turn on stack trace
