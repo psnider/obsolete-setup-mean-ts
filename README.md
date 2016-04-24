@@ -34,36 +34,34 @@ and it should collapse sections when you click on minus signs,
 and expand sections when you click on plus signs.
 
 
-# Install an Editor
-We use Atom, v1.1.0 or later.  
-
 <a name="Atom Editor"></a>
-## Install Atom Editor
+# Install Atom Editor
+We use Atom, v1.7 or later.  
 **Dependencies**: No dependencies. You may set up Atom whenever you like.  
 Download from [https://atom.io/](https://atom.io/)
 
 Complete the install by unzipping the archive, and dragging the Atom application into your Applications folder. Run Atom and set it to remain in your dock.
 
-### Install TypeScript support
+## Install TypeScript support
 
 From within Atom, search for the *atom-typescript* add-on, and install it.  
-From Settings (⌘,), under Packages, search for *atom-typescript*.
+From Settings (**⌘,**), under Packages, search for *atom-typescript*.
 Find it in the results, and install it.
 
 
-### Configure so tabs are set to 4 spaces for all text files.
+## Configure so tabs are set to 4 spaces for all text files.
 
 From Settings (⌘,), under Editor Settings:  
 - select "Soft Tabs"
 - set "Tab Length" to 4.
 
-### Configure so whitespace is standardized upon file save.
+## Configure so whitespace is standardized upon file save.
 
-#### Strip trailing whitespace from all lines
+### Strip trailing whitespace from all lines
 
 This is standard behavior in Atom v1.1.0, controlled by the *whitespace* package.
 
-#### Convert tabs to spaces upon file save.
+### Convert tabs to spaces upon file save.
 
 From within Atom, search for the *tabs-to-spaces* add-on, and install it.
 
@@ -80,18 +78,18 @@ Update the general Atom configuration file, ~/.atom/config.cson, by adding the f
     onSave: "tabify"
 ```
 
-#### Exclude some directories from file search
+### Exclude some directories from file search
 
 This is not supported yet in Atom. See [find-and-replace/issues/149](https://github.com/atom/find-and-replace/issues/149)
 
-### Configure so files are saved upon losing window focus.
+## Configure so files are saved upon losing window focus.
 
 From the Settings (⌘,), find *autosave* in Packages, and check the "Enabled" box.
 
-### Set a white cursor
+## Set a white cursor
 From the Settings (⌘,) Install, find and install the *white-cursor* package.
 
-### Enable previewing MarkDown files
+## Enable previewing MarkDown files
 This is standard in Atom v1.1.0.
 
 
@@ -175,60 +173,8 @@ We no longer use global packages.
 In all cases, use local packages.  
 This better supports deployment and testing in the cloud, where there are no global installs.
 
-### Notes on common packages
-
-- Typescript  
-We use [TypeScript](http://www.typescriptlang.org) whenever possible, because it adds strong typing to javascript.  
-Use npm to install typescript:
-```
-npm install typescript
-```
-To update:  
-```
-npm cache clean
-npm update typescript
-```
-- Typescript Declaration Files Manager
-We use the [TypeScript Definition manager for DefinitelyTyped](https://github.com/DefinitelyTyped/tsd) for managing TypeScript declaration files.  
-However, it appears that [Typings is replacing TSD](https://github.com/DefinitelyTyped/tsd/issues/269), so we will be moving to Typings soon.
-
-Use npm to install tsd:
-```
-npm install tsd
-```
-To update:  
-```
-npm cache clean
-npm update tsd
-```
-- Test Framework  
-We use [Mocha](http://visionmedia.github.io/mocha/) because it is flexible,
-and karma to connect to browsers for the client.  
-Use npm to install both:
-
-   ```
-   npm install mocha karma karma-mocha karma-requirejs karma-chrome-launcher karma-firefox-launcher
-   ```
-- Source Debugger  
-We'll use [Node Inspector](https://github.com/node-inspector/node-inspector/blob/master/readme.md) for source level debugging of node programs, including mocha tests.  
-Use npm to install node-inspector:
-
-   ```
-   npm install node-inspector
-   ```
-- Web Development Framework  
-We use [express](https://npmjs.org/package/express), because it provides simple routing.
-  ```
-  npm install express
-  ```
-- Client package management  
-We use bower, when npm isn't supported.
-
-See the Bower page: [http://http://bower.io/](http://http://bower.io/)
-  ```
-  npm install bower
-  ```
-
+When you setup a new git repo, you will need to install our basic tooling.
+These are described in [install-commonly-used-npm-packages.md](install-commonly-used-npm-packages.md).
 
 # Install MongoDB
 **Dependencies**: You must have brew, and XCode.  
@@ -256,34 +202,24 @@ mongod --dbpath /mongo_data/play
 
 
 # Install Java
-- The Java JDK download link. This was hard to find (the JRE link was easy). To find this link I had to search for the name of the download file, in this case it was jdk-7u55-macosx-x64.dmg
-[http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html](Oracle's download site)
-
-Add these lines to your ~/.profile:
-
+- Download the Java JDK download link.  
+[Oracle's JDK download site](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)  
+Click *Accept License Agreement*, then click on the link for OSX, which will download a DMG file containing the JDK.
+- Add JAVA environment variables to your ~/.profile:  
+Verify the path given here points the bin directory that contains java.
+You will probably have to addjust the version to match the one you downloaded.  
+Run these lines from a terminal.
 ```
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home
-export PATH=$PATH:$JAVA_HOME/bin
+echo export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home >>~/.profile
+echo export PATH=$PATH:$JAVA_HOME/bin >>~/.profile
 ```
 
-# Install Redis
-Follow the instructions at: [http://redis.io/download](http://redis.io/download)
+# Install Code Metrics
+## Install CLOC - Count Lines of Code
 
-# Install Beanstalk Message Queue
-[http://kr.github.io/beanstalkd/download.html](http://kr.github.io/beanstalkd/download.html)
-brew install beanstalkd
-beanstalkd
-
-
-# Install CLOC - Count Lines of Code
-
-This counts lines of code, and has many options.
-
+CLOC counts lines of code, and has many options.  
 - [Documentation](http://cloc.sourceforge.net/)
 - [Download](http://sourceforge.net/projects/cloc/files/latest/download?source=files)
-
-
-#### Install
 
 **Dependencies**: No dependencies. You may set up cloc whenever you like.
 
@@ -292,7 +228,7 @@ and create a shell function to run cloc with the correct arguments.
 Make sure you change the CLOC_VER variable below to match the version of what you downloaded.
 
 ```
-CLOC_VER=1.60
+CLOC_VER=1.64
 sudo cp /Users/$USER/Downloads/cloc-$CLOC_VER.pl /usr/local/bin
 sudo chmod +x /usr/local/bin/cloc-$CLOC_VER.pl
 cat - >> ~/.profile << END
@@ -331,7 +267,7 @@ Typescript
 ```
 
 
-### Examples
+## Examples
 ```
 cloc schema src test  
 cloc --exclude-lang=HTML,Javascript schema src test
@@ -341,7 +277,7 @@ cloc --exclude-lang=HTML,Javascript schema src test
 
 # Install generateCodeVocabulary
 
-#### Description
+## Description
 
 **generateCodeVocabulary** determines the symbols used in a collection of source files, and counts their use.  
 
@@ -356,7 +292,7 @@ This has been tested with TypeScript/Javascript, but should work for any languag
 By keeping the generated vocabulary files for each version of code, changes can be verified before submitting code to your version control system.
 
 
-#### Install
+## Install
 
 **Dependencies**: This uses CLOC.
 
@@ -369,13 +305,13 @@ chmod +x generateCodeVocabulary.py
 sudo cp generateCodeVocabulary.* /usr/local/bin
 ```
 
-#### Examples
+## Examples
 These commands are run as part of our **reports** target of make:
 
 ```
-    generateCodeVocabulary.py --ext ts --out reports/client.vocabulary.json src/client
-    generateCodeVocabulary.py --ext ts --out reports/server.vocabulary.json src/server
-    generateCodeVocabulary.py --ext ts --out reports/test.vocabulary.json test
-    -rm reports/all.vocabulary.json
-    generateCodeVocabulary.py --ext vocabulary.json --out reports/all.vocabulary.json reports
+generateCodeVocabulary.py --ext ts --out reports/client.vocabulary.json src/client
+generateCodeVocabulary.py --ext ts --out reports/server.vocabulary.json src/server
+generateCodeVocabulary.py --ext ts --out reports/test.vocabulary.json test
+-rm reports/all.vocabulary.json
+generateCodeVocabulary.py --ext vocabulary.json --out reports/all.vocabulary.json reports
 ```
