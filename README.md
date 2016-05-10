@@ -231,6 +231,7 @@ Make sure you change the CLOC_VER variable below to match the version of what yo
 CLOC_VER=1.64
 sudo cp /Users/$USER/Downloads/cloc-$CLOC_VER.pl /usr/local/bin
 sudo chmod +x /usr/local/bin/cloc-$CLOC_VER.pl
+sudo $SHELL -c "cd /usr/local/bin; ln -s cloc-$CLOC_VER.pl cloc.pl"
 cat - >> ~/.profile << END
 function cloc()
 {
@@ -302,7 +303,7 @@ Copy the files to /usr/local/bin:
 
 ```
 chmod +x generateCodeVocabulary.py
-sudo cp generateCodeVocabulary.* /usr/local/bin
+sudo cp generateCodeVocabulary.py generateCodeVocabulary.sed  /usr/local/bin
 ```
 
 ## Examples

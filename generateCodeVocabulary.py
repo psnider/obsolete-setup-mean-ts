@@ -31,7 +31,8 @@ SED_PATHNAME = os.path.join(os.path.dirname(sys.argv[0]), 'generateCodeVocabular
 def findVocabularyFromSourceFile(filename):
     print "finding vocabulary from " + filename
     # remove the comments from the input file
-    call(["cloc-1.62.pl", "--force-lang-def=/Users/peter/.cloc.lang_def", "--strip-comments=nc", "--original-dir", "--quiet", "--report-file=/dev/null", filename])
+    call(["cloc.pl", "--force-lang-def=/Users/peter/.cloc.lang_def", "--strip-comments=nc", "--original-dir", "--quiet", "--report-file=/dev/null", filename])
+    
     original_no_comments_filename = filename + ".nc"
     no_comments_filename = "/tmp/generateCodeVocabulary." + PROCESS_PID + ".nc"
     os.rename(original_no_comments_filename, no_comments_filename)
@@ -69,7 +70,7 @@ def lexicalSortKey(s):
     # TODO: figure out how to remove characters from a unicode string, and create a more general solution
     a = s.encode('ascii','ignore')
     return str.translate(a, None, '_$')
-    
+
 
 
 def writeVocabularyAsJSON(file_or_name, vocabulary):
@@ -145,4 +146,3 @@ writeVocabularyAsJSON(output, vocabulary)
 
 
 sys.exit(0)
-
