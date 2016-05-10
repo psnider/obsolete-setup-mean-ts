@@ -2,30 +2,75 @@
 
 # HTML5
 
-### Prerequisites:
+## Prerequisites
 
-- familiarity with layout markup languages
+- familiarity with web pages
 
-### Resources:
+## Tutorials
 
-- [http://html5doctor.com/](http://html5doctor.com/) Has up to date references on best practices for HTML5. You can study the element tags from the [http://html5doctor.com/element-index/](element index).
- - This shows recent browser usage statistics globally: [http://gs.statcounter.com/](http://gs.statcounter.com/)  
-- This shows status of each HTML5 feature in major browsers: [http://caniuse.com/](http://caniuse.com/)
+**Basics**
+- http://www.tutorialrepublic.com/html-examples.php  
+This covers the older core of HTML, still used by HTML5.
+View the examples, to understand what can be done with the basic elements.
+### Great Examples
+Studying existing great work is the best way to learn how to do great work.  
 
-### Upcoming:
+Most existing tutorials use a book metaphor.
+Don't use these except for reference and backfill!  
+
+Here are some great examples:
+http://www.creativebloq.com/web-design/examples-of-html-1233547
+
+
+### Book Metaphor Tutorials (for reference and backfill!)
+- http://www.tutorialspoint.com/html5/  
+Don't read the tutorial front to back.  
+Read the parts that are relevant to the project you're working on.
+- http://www.w3schools.com/html/html_examples.asp  
+Read the **{some subject} explained** sections.
+
+## Resources
+
+- [HTML5 Weekly newsletter via email](http://html5weekly.com/)  
+Subscribe to keep up on latest HTML5 news.
+- [http://html5doctor.com/](http://html5doctor.com/)  
+Has up to date references on best practices for HTML5.
+- [http://html5doctor.com/element-index/](element index)  
+You can study the element tags from here, as you need them.
+- [http://gs.statcounter.com/](http://gs.statcounter.com/)  
+ This shows recent browser usage statistics globally:  
+- [http://caniuse.com/](http://caniuse.com/)
+This shows status of each HTML5 feature in major browsers.
+
+### Upcoming
 four related W3C specifications:
 - Custom Elements - Enables the extension of HTML through custom tags.
 - HTML Imports - Enables packaging of various resources (HTML, CSS, JS, etc.).
 - Template Element - Enables the inclusion of inert HTML in a document.
 - Shadow DOM - Enables encapsulation of DOM and CSS.
 
-# Javascript
-Prerequisites:
 
+
+# CSS3
+## Prerequisites
+- some familiarity with HTML
+
+## Tutorials
+
+- http://www.w3schools.com/css/css_examples.asp  
+Read the **{some subject} explained** sections.
+
+
+# Javascript
+## Prerequisites
 - some programming, preferably with a dynamic language
 
-Resources:
+## Tutorials
+[JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
+## Resources
+- [JavaScript Weekly newsletter via email](http://javascriptweekly.com/)  
+Subscribe to keep up on latest JavaScript news.
 - **node** Read-Eval-Print-Loop (REPL) interpreter  
 The interpreter allows you to test javascript code in an interactive environment.
 - Javascript function patterns
@@ -44,20 +89,22 @@ The interpreter allows you to test javascript code in an interactive environment
 
 
 # TypeScript
-Prerequisites:
+## Prerequisites
 
 - some Javascript
 - experience with a typed language like C++
 
-Resources:
+## Resources
 
 - The [main site](http://www.typescriptlang.org) has many resources.  
 - This video explains the [design of Typescript](http://media.ch9.ms/ch9/c3e5/e5e02f2e-5962-48db-9ddd-85e27a4fc3e5/IntroducingTSAndersH_mid.mp4)
-- The [on-line compiler](http://www.typescriptlang.org/Playground/), which is very handy.  
+- on-line [Playground](http://www.typescriptlang.org/Playground/)  
+Use this to learn the basics of how TypeScript is translated into javascript.  
+Keep in mind that this doesn't work with external modules.
 - [TypeScript Modules Demystified : Internal, AMD with RequireJS](http://www.youtube.com/watch?v=KDrWLMUY0R0)
 - You can ask questions live using a [web-based IRC chat client](https://webchat.freenode.net).  
   Pick any user name, and specify the **typescript** channel.
- 
+
 Notes on IRC:
 
 - You can use [pastebin](http://pastebin.com) to transfer code or data to people anonymously.
@@ -67,47 +114,60 @@ Notes on IRC:
 
 
 
-# Node.js Server and npm Package Manager
-Prerequisites:
+# Node.js
+##Prerequisites
 
 - none, if just using the node Read-Eval-Print-Loop (REPL)
 - strong Javascript, if writing server apps
+## Tutorials
+- https://www.joyent.com/developers/node/design
+## Resources
 
-Resources:
-
-- [The main site has many resources](http://nodejs.org)
-- [The API reference](http://nodejs.org/api)
+- [Node.js Weekly newsletter via email](http://nodeweekly.com/)  
+Subscribe to keep up on latest Node.js news.
+- The [main site](http://nodejs.org) has many resources
+- The [API reference](http://nodejs.org/api)
 - You can ask questions live using a [web-based IRC chat client](https://webchat.freenode.net).  
   Pick any user name, and specify the **node.js** channel.
 - [Three Years of Node.js in Production](https://www.joyent.com/developers/videos/reflections-on-three-years-of-nodejs-in-production)
 
 
+# Mocha
+## Prerequisites
+- some javascript, node.js
+
+## Tutorials
+
+## Resources
+- http://chaijs.com/api/bdd/  
+The expect operations for BDD (Behavior Driven Development) testing.
+
 # MongoDB
-Prerequisites:
+## Prerequisites
 
 - experience with JSON
 
-Resources:
+## Resources
 
 - [overview](http://docs.mongodb.org/manual/tutorial/getting-started/)
 - [CRUD](http://docs.mongodb.org/manual/crud/)
 - [Geospatial support](http://docs.mongodb.org/manual/applications/geospatial-indexes/)
 
 
-# Grunt Build Manager
-Prerequisites:
+# Gulp Build Manager
+Prerequisites
 
 - experience building software
 
-Resources:
+## Resources
 
-- [http://gruntjs.com/]()
-- [http://jessefreeman.com/dev-techniques/automating-typescript-with-node-and-grunt/]()
+- http://gulpjs.com/
+- See examples in [people-service](https://github.com/psnider/people-service/blob/master/gulpfile.js) project.
 
 
 
 # AngularJS Web-App Framework
-Prerequisites:
+## Prerequisites
 
 - strong Javascript
 - strong HTML
@@ -115,7 +175,7 @@ Prerequisites:
 - some CSS
 
 
-Resources:
+## Resources
 
 - [https://thinkster.io/angulartutorial/a-better-way-to-learn-angularjs/]()
 - [http://docs.angularjs.org/guide/concepts](http://docs.angularjs.org/guide/concepts)  
@@ -128,21 +188,22 @@ The first example I found for how to get a service to work.
 # Twitter Bootstrap
 An Javascript+CSS library that provides a clean look that adjusts well for mobile devices.
 
-Prerequisites:
+## Prerequisites
 
 - basic HTML
 - basic CSS
 
-Resources:
+## Resources
 
 - [http://getbootstrap.com/]()
+- [http://getbootstrap.com/getting-started/]()
 
 # Git
-Prerequisites:
+Prerequisites
 
 - basic familiarity with source control
 
-Resources:
+## Resources
 
 - [http://git-scm.com/]()
 - [Explanation of the Staging Area](http://www.gitguys.com/topics/whats-the-deal-with-the-git-index)
@@ -161,24 +222,28 @@ Git Culture:
 [http://ben.balter.com/2014/11/06/rules-of-communicating-at-github/]()
 
 # MarkDown
-Prerequisites:
+## Prerequisites
 
 - familiarity with layout markup languages
 
-Resources:
+## Tutorials
+- practice in Atom with one of these files.  
+Type Ctl+Shft+M to render an \*.md file
+
+## Resources
 
 - You can learn the [syntax and options](http://daringfireball.net/projects/markdown/syntax) from the author MarkDown.
 
 
 # Chrome Debugger
-### Prerequisites:
+### Prerequisites
 
 - familiarity with javascript
 - familiarity with debuggers
 
 ### Helpful console functions
 
-[https://shellycloud.com/blog/2014/11/five-functions-of-the-console-object-you-didnt-know]
+[https://shellycloud.com/blog/2014/11/five-functions-of-the-console-object-you-didnt-know]()
 - console.assert(expression, message)
 - console.profile(name)
 - console.time(name)
@@ -199,7 +264,7 @@ Logs each time the function is executed
 
 # Technologies to Investigate
 
-- [An AngularJS widget that creates a complete form given a JSON schema](https://gist.github.com/dalcib/3174225) 
+- [An AngularJS widget that creates a complete form given a JSON schema](https://gist.github.com/dalcib/3174225)
 - [What can you do with PostgreSQL and JSON?](http://clarkdave.net/2013/06/what-can-you-do-with-postgresql-and-json/)
 - [A popular DB binding for PostGres](https://github.com/brianc/node-postgres)
 - [SVG editor](http://sourceforge.net/projects/inkscape/?source=dlp)
@@ -239,3 +304,12 @@ Logs each time the function is executed
 # Developement Tools
 - [Node Tools for MS VisualStudio](https://nodejstools.codeplex.com/releases/view/149714?utm_source=nodeweekly&utm_medium=email)
 - [Setup VM on Mac](https://msdn.microsoft.com/en-us/library/windows/apps/jj945425.aspx)
+
+
+# Elm
+Elm is a funcitonal language for building complex HTML pages.
+
+- [http://elm-lang.org/]()
+- [http://www.elm-tutorial.org/]()
+- [https://github.com/evancz/elm-todomvc]()
+- [http://mbylstra.github.io/html-to-elm/]()
