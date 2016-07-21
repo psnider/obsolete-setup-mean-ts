@@ -45,7 +45,7 @@ Complete the install by unzipping the archive, and dragging the Atom application
 ## Install TypeScript support
 
 From within Atom, search for the *atom-typescript* add-on, and install it.  
-From Settings (**⌘,**), under Packages, search for *atom-typescript*.
+From Settings (**⌘,**), under Install, search for *atom-typescript*.
 Find it in the results, and install it.
 
 
@@ -93,6 +93,13 @@ From the Settings (⌘,) Install, find and install the *white-cursor* package.
 This is standard in Atom v1.1.0.
 
 
+<a name="VS Code"></a>
+# Install Microsoft VisualStudio Code
+
+See: https://code.visualstudio.com/docs/setup/osx
+
+
+
 <a name="iTerm2 App"></a>
 # Install iTerm2
 **Dependencies**: none
@@ -105,7 +112,9 @@ Install from [https://www.iterm2.com/](https://www.iterm2.com/)
 # Install GitHub App
 **Dependencies**:  
 - You must have a GitHub account.
-- You should also have SSH keys. You can set them up by following this article: [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
+- You should also have SSH keys.  
+It appears that the GitHub app may setup your SSH keys for you.
+If it doesn't, then you can set them up by following this article: [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
 - There are no dependencies on any other tools. You may set up the GitHub app whenever you like.  
 
 
@@ -156,16 +165,32 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 **Dependencies**:  
 - homebrew (above)
 
+We use seneca.js which as of Jul 20, 2016, is at v 2.1.0, and it does not work with node v6, so we use v4 LTS.
+
 Install using homebrew:
 ```
-homebrew install node
+brew tap homebrew/versions
+brew search node
 ```
+
+You should see this version listed: *homebrew/versions/node4-lts*  
+Install it and confirm the new version by:
+```
+brew unlink node
+brew install homebrew/versions/node4-lts
+node --version
+```
+
 
 As of Nov 8, 2015, this installs:
 - node v5.0.0
 - npm 3.3.9
 
 
+```
+echo 'export PATH=$PATH::node_modules/.bin' >>~/.profile
+echo 'export NODE_ENV=development' >>~/.profile
+```
 
 ## npm
 We no longer use global packages.  
@@ -204,15 +229,20 @@ mongod --dbpath /mongo_data/play
 # Install Java
 - Download the Java JDK download link.  
 [Oracle's JDK download site](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)  
+Select the highest numbered version for the JDK, which will be named something like: *Java SE Development Kit 8u92*.
 Click *Accept License Agreement*, then click on the link for OSX, which will download a DMG file containing the JDK.
 - Add JAVA environment variables to your ~/.profile:  
 Verify the path given here points the bin directory that contains java.
-You will probably have to addjust the version to match the one you downloaded.  
+You will probably have to adjust the version to match the one you downloaded.  
 Run these lines from a terminal.
 ```
 echo export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home >>~/.profile
 echo export PATH=$PATH:$JAVA_HOME/bin >>~/.profile
+source ~/.profile
+java -version
 ```
+
+
 
 # Install Code Metrics
 ## Install CLOC - Count Lines of Code

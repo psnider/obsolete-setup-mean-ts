@@ -41,6 +41,7 @@ You can study the element tags from here, as you need them.
  This shows recent browser usage statistics globally:  
 - [http://caniuse.com/](http://caniuse.com/)
 This shows status of each HTML5 feature in major browsers.
+- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### Upcoming
 four related W3C specifications:
@@ -60,13 +61,17 @@ four related W3C specifications:
 - http://www.w3schools.com/css/css_examples.asp  
 Read the **{some subject} explained** sections.
 
+## Resources
+- [Trello CSS Guide](https://gist.github.com/bobbygrace/9e961e8982f42eb91b80)
+
 
 # Javascript
 ## Prerequisites
 - some programming, preferably with a dynamic language
 
 ## Tutorials
-[JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [Microsoft's Reactive Extensions (Rx) Library](http://reactivex.io/learnrx/)
 
 ## Resources
 - [JavaScript Weekly newsletter via email](http://javascriptweekly.com/)  
@@ -75,18 +80,7 @@ Subscribe to keep up on latest JavaScript news.
 The interpreter allows you to test javascript code in an interactive environment.
 - Javascript function patterns
 [http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)
-- [Jeff Harrel of PayPal: 9 Anti-Patterns for Node.js Teams](https://www.youtube.com/watch?v=6phif2t-wj0)
-
-  1. Baggage from your previous technology  
-  - Monolithic Applications
-  - Googling How do you do X in javascript?
-  - Handling Errors
-  - Wrapping everything in Promises
-  - Git URLs in your package.json
-  - Sloppy async code
-  - Having Node do everything
-  - Ignoring the Node ecosystem
-
+- [ECMAScript 2017 Language Specification](https://tc39.github.io/ecma262/)
 
 # TypeScript
 ## Prerequisites
@@ -121,6 +115,7 @@ Notes on IRC:
 - strong Javascript, if writing server apps
 ## Tutorials
 - https://www.joyent.com/developers/node/design
+
 ## Resources
 
 - [Node.js Weekly newsletter via email](http://nodeweekly.com/)  
@@ -130,6 +125,19 @@ Subscribe to keep up on latest Node.js news.
 - You can ask questions live using a [web-based IRC chat client](https://webchat.freenode.net).  
   Pick any user name, and specify the **node.js** channel.
 - [Three Years of Node.js in Production](https://www.joyent.com/developers/videos/reflections-on-three-years-of-nodejs-in-production)
+- [zone.js](https://github.com/btford/zone.js/blob/master/lib/core.js)
+- [Testing Angular 2 apps](https://developers.livechatinc.com/blog/testing-angular-2-apps-routeroutlet-and-http/)
+- [ng2-table](http://valor-software.com/ng2-table/)
+- [Techniques and practices for testing an Angular 2 app](https://angular.io/docs/ts/latest/guide/testing.html)
+- [Jeff Harrel of PayPal: 9 Anti-Patterns for Node.js Teams](https://www.youtube.com/watch?v=6phif2t-wj0)
+  - Monolithic Applications
+  - Googling How do you do X in javascript?
+  - Handling Errors
+  - Wrapping everything in Promises
+  - Git URLs in your package.json
+  - Sloppy async code
+  - Having Node do everything
+  - Ignoring the Node ecosystem
 
 
 # Mocha
@@ -313,3 +321,15 @@ Elm is a funcitonal language for building complex HTML pages.
 - [http://www.elm-tutorial.org/]()
 - [https://github.com/evancz/elm-todomvc]()
 - [http://mbylstra.github.io/html-to-elm/]()
+
+
+# Docker
+
+## Prerequisites
+
+- familiarity with cloud deployment and administration
+
+## Tutorials
+- [Get Started with Docker for Mac OS X](https://docs.docker.com/mac/)
+- [Why Containers and Docker are the Future](http://resources.codeship.com/hubfs/resources_PDFs/Codeship_Why_Containers_and_Docker_are_the_Future.pdf?t=1452849717341)
+- [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
