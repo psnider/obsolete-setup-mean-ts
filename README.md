@@ -202,6 +202,7 @@ When you setup a new git repo, you will need to install our basic tooling.
 These are described in [install-commonly-used-npm-packages.md](install-commonly-used-npm-packages.md).
 
 # Ruby
+**Dependencies**: None  
 
 ```
 brew update
@@ -210,7 +211,7 @@ source ~/.profile
 ruby --version
 ```
 
-# Install NativeScript
+# NativeScript
 **Dependencies**: You must have brew, and ruby.  
 **Reference**: [NativeScript installation instructions](https://docs.nativescript.org/start/quick-setup)
 
@@ -224,11 +225,13 @@ npm install -g nativescript
 ```  
 This will print some warnings related to missing Android and iOS packages. Ignore these, as we'll configure this next.  
 Answer the questions as follows:  
-  - Do you want to visit the official documentation? No  
-  - Do you want to run the setup script? No  
-  - Do you want to help us improve NativeScript by automatically sending anonymous usage statistics?  Yes  
-  - If you are using bash or zsh, you can enable command-line completion.  Do you want to enable it now? Yes  
-- Install iOS and Android requirements using their setup script
+  - Do you want to visit the official documentation? **No**  
+  - Do you want to run the setup script? **No**  
+  - Do you want to help us improve NativeScript by automatically sending anonymous usage statistics?  **Yes**  
+  - If you are using bash or zsh, you can enable command-line completion.  Do you want to enable it now? **Yes**
+  - Allow the script to install Java SE Development Kit?  **Yes**  
+  - Allow the script to install Android SDK?  **All**  
+
 ```
 ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"
 ```
@@ -238,6 +241,8 @@ Answer the questions as follows:
   - Allow the script to install Homebrew? no  
 We already installed homebrew, so don't install it again.
 - Verify the setup
+Unfortunately, as of July 25, 2016, this step won't work, due to an error in the above install scripts,
+which we will fix in the following section, *Repair your bash startup scripts*.
 ```
 tns doctor
 ```
@@ -247,6 +252,14 @@ You should see “No issues were detected”.
 The NativeScript install process has a bug, please follow the instructions [here](https://github.com/NativeScript/NativeScript/issues/2506).
 
 To be safe, logout and log back in before attempting to use NativeScript.
+Then return to the *Verify the setup* step above.
+
+# Install Virtual box
+
+Download the DMG for OS X found at: https://www.virtualbox.org/wiki/Downloads  
+As of July 25, 2016, this was labeled *VirtualBox 5.1.2 for OS X hosts* for **amd64**
+
+
 
 # Install Genymotion
 
