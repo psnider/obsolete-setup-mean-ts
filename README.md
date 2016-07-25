@@ -201,6 +201,65 @@ This better supports deployment and testing in the cloud, where there are no glo
 When you setup a new git repo, you will need to install our basic tooling.
 These are described in [install-commonly-used-npm-packages.md](install-commonly-used-npm-packages.md).
 
+# Ruby
+
+```
+brew update
+brew install ruby
+source ~/.profile
+ruby --version
+```
+
+# Install NativeScript
+**Dependencies**: You must have brew, and ruby.  
+**Reference**: [NativeScript installation instructions](https://docs.nativescript.org/start/quick-setup)
+
+
+## Follow the [NativeScript installation instructions](https://docs.nativescript.org/start/quick-setup)
+
+These are summarized here:
+
+```
+npm install -g nativescript
+```  
+This will print some warnings related to missing Android and iOS packages. Ignore these, as we'll configure this next.  
+Answer the questions as follows:  
+  - Do you want to visit the official documentation? No  
+  - Do you want to run the setup script? No  
+  - Do you want to help us improve NativeScript by automatically sending anonymous usage statistics?  Yes  
+  - If you are using bash or zsh, you can enable command-line completion.  Do you want to enable it now? Yes  
+- Install iOS and Android requirements using their setup script
+```
+ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"
+```
+You will be asked for your Administator password several times.
+Answer the questions as follows:  
+  - By typing 'agree' you are agreeing to the terms of the software license agreements. Type 'print' to print them or anything else to cancel, [agree, print, cancel] agree
+  - Allow the script to install Homebrew? no  
+We already installed homebrew, so don't install it again.
+- Verify the setup
+```
+tns doctor
+```
+You should see “No issues were detected”.
+
+## Repair your bash startup scripts
+The NativeScript install process has a bug, please follow the instructions [here](https://github.com/NativeScript/NativeScript/issues/2506).
+
+To be safe, logout and log back in before attempting to use NativeScript.
+
+# Install Genymotion
+
+Install from https://www.genymotion.com/download/, and select the free version.
+
+Set the Android SDK to match the environment variable *ANDROID_HOME*:
+- Open up Genymotion->Settings->ADB
+- Select: Use custom Android SDK tools
+- Get the value of ANDROID_HOME: ```echo $ANDROID_HOME```
+- Enter that value into the *Android SDK* input
+- click Browse and select the version that you want to use.  
+e.g. */usr/local/Cellar/android-sdk/24.4.1_1*
+
 # Install MongoDB
 **Dependencies**: You must have brew, and XCode.  
 **Reference**: [tutorial/install-mongodb-on-os-x](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
@@ -227,6 +286,8 @@ mongod --dbpath /mongo_data/play
 
 
 # Install Java
+**TODO**: perhaps this can be done with homebrew?
+
 - Download the Java JDK download link.  
 [Oracle's JDK download site](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)  
 Select the highest numbered version for the JDK, which will be named something like: *Java SE Development Kit 8u92*.

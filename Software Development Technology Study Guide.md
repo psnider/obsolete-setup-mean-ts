@@ -56,14 +56,22 @@ four related W3C specifications:
 ## Prerequisites
 - some familiarity with HTML
 
-## Tutorials
+## Tutorials and Examples
 
 - http://www.w3schools.com/css/css_examples.asp  
 Read the **{some subject} explained** sections.
+- http://tutorialzine.com/2014/07/20-impressive-css3-techniques-libraries-and-examples/  
+  - the loading indicators should indicate the current network state (fast, degraded, slow)
+- https://css3playground.com/hover/
+- http://www.tutorialrepublic.com/css-examples.php  
+The coding style of these examples appears to be more in line with modern conventions. There are no style attributes on HTML, only class.
+- http://bavotasan.com/2010/draw-smiley-face-css3/
+- http://1stwebdesigner.com/css-effects/
 
 ## Resources
 - [Trello CSS Guide](https://gist.github.com/bobbygrace/9e961e8982f42eb91b80)
-
+- Interactive Design
+  - [On/Off switch](https://proto.io/freebies/onoff/)
 
 # Javascript
 ## Prerequisites
@@ -191,6 +199,12 @@ Provides a clear overview of the framework.
 - [When to use directives controllers or services](http://kirkbushell.me/when-to-use-directives-controllers-or-services-in-angular/)  
 The first example I found for how to get a service to work.
 - [Angular using Typescript](http://www.youtube.com/watch?v=u6TeBM_SC8w)
+
+
+# NativeScript
+## Resources
+- [Tutorial for use with Angular2](http://docs.nativescript.org/angular/tutorial/ng-chapter-1)  
+You will have to install nativescript, since we didn't install it globally.  ```npm install nativescript```
 
 
 # Twitter Bootstrap
