@@ -72,6 +72,9 @@ The coding style of these examples appears to be more in line with modern conven
 - [Trello CSS Guide](https://gist.github.com/bobbygrace/9e961e8982f42eb91b80)
 - Interactive Design
   - [On/Off switch](https://proto.io/freebies/onoff/)
+  - [CSS clip-path maker](http://bennettfeely.com/clippy/)
+- Tools
+  - [NativeScript Image Builder](http://nsimage.brosteins.com/)
 
 # Javascript
 ## Prerequisites
@@ -202,10 +205,15 @@ The first example I found for how to get a service to work.
 
 
 # NativeScript
+You should install nativescript globally.  
+
+```
+npm install -g nativescript
+```
+
 ## Resources
 - [Tutorial for use with Angular2](http://docs.nativescript.org/angular/tutorial/ng-chapter-1)  
-You will have to install nativescript, since we didn't install it globally.  ```npm install nativescript```
-
+This is an excellent tutorial.  
 
 # Twitter Bootstrap
 An Javascript+CSS library that provides a clean look that adjusts well for mobile devices.
