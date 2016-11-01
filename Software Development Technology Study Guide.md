@@ -214,6 +214,7 @@ npm install -g nativescript
 ## Resources
 - [Tutorial for use with Angular2](http://docs.nativescript.org/angular/tutorial/ng-chapter-1)  
 This is an excellent tutorial.  
+- ["Snacks" Video Tutorials](http://www.nativescriptsnacks.com/)
 
 # Twitter Bootstrap
 An Javascript+CSS library that provides a clean look that adjusts well for mobile devices.

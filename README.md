@@ -95,8 +95,18 @@ This is standard in Atom v1.1.0.
 
 <a name="VS Code"></a>
 # Install Microsoft VisualStudio Code
+We use (Microsoft VisualStudio) Code v1.3.1 or later.  
+**Dependencies**: No dependencies. You may set up (Microsoft VisualStudio) Code whenever you like.  
 
 See: https://code.visualstudio.com/docs/setup/osx
+
+
+## Configure so files are saved upon losing window focus.
+
+From the Settings (⌘,), edit the *settings.json* file (not Default Settings) by adding:
+```
+"files.autoSave": "onFocusChange"
+```
 
 
 
@@ -275,7 +285,7 @@ e.g. */usr/local/Cellar/android-sdk/24.4.1_1*
 
 # Install MongoDB
 **Dependencies**: You must have brew, and XCode.  
-**Reference**: [tutorial/install-mongodb-on-os-x](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
+**Reference**: [tutorial/install-mongodb-on-os-x](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 
 Use Homebrew to install MongoDB:
 

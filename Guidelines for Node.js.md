@@ -3,6 +3,9 @@
 Node.js uses commonjs format modules, which are external by definition.  
 External modules can be shared with other projects.  
 - Every external module must have a corresponding decl file.
+- Dependencies are pinned to specific versions.  
+This prevents surprises due to silent incompatibilities after an update to a dependent module.  
+See the current versions we use: [dependencies.json](./dependencies.json)
 - modules are named with quotes:  e.g. declare module "A" {} 
 - prefer smaller modules over larger
 - modules should export only the minimum required
