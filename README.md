@@ -175,26 +175,29 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 **Dependencies**:  
 - homebrew (above)
 
-We use seneca.js which as of Jul 20, 2016, is at v 2.1.0, and it does not work with node v6, so we use v4 LTS.
-
 Install using homebrew:
 ```
 brew tap homebrew/versions
 brew search node
 ```
 
-You should see this version listed: *homebrew/versions/node4-lts*  
+You should see this version listed: *homebrew/versions/node6-lts*  
 Install it and confirm the new version by:
 ```
 brew unlink node
-brew install homebrew/versions/node4-lts
+brew install homebrew/versions/node6-lts
 node --version
 ```
 
+I encountered an error here, in which node reported its version as 5.0.0.
+To repair this, I ran:
+```
+brew link --overwrite node6-lts
+```
 
-As of Nov 8, 2015, this installs:
-- node v5.0.0
-- npm 3.3.9
+As of Nov 7, 2016, this installs:
+- node v6.9.1
+- npm 3.10.8
 
 
 ```
