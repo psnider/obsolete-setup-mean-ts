@@ -8,14 +8,24 @@ Read [string](http://www.w3schools.com/js/js_strings.asp)
 Try to write strings so you can search for content with grep.  
 (e.g. prefer "don't" to 'don\'t')
 - Methods unrelated to HTML  
-Learn the basic methods that have to do with string testing and manipulation, 
-such as charAt(), includes(), match(), etc.  
+Learn the basic methods that have to do with string testing and manipulation.
+These include:
+    - indexOf(), lastIndexOf(), search()
+    - slice()
+    - toUpperCase(), toLowerCase()
+    - concat()
+    - replace()
+    - charAt(), charCodeAt()
+    - split()
+    - includes()
+    - match()
+    - trim()
 You should know how these work, and should remember they exist, but you can look up the details, so you don't need to memorize them.
 - Use ===  and !==  
 (instead of == and !=)
 
 ## Don't worry about these features:
-- String instaces.
+- String instances.
 - HTML wrapper methods
 
 
@@ -38,6 +48,39 @@ Pay attention to testing of values in boolean expressions, as it's quirky in jav
 (instead of == and !=)
 - Use == and != when testing for non-existence  
 e.g. ```a == null``` or ```a != null```
+
+
+# Date
+Read [Date](http://www.w3schools.com/jsref/jsref_obj_date.asp)
+
+We only store UTC dates (times), never local dates.
+UTC dates are used for computation, and local times are considered to be for display only.
+For local time information, we store time-zones, then use those to display local times.
+
+For string display for logs, and any computing related purpose, we use the ISO format, which is also the format used by the V8 interpreter. For example:
+```new Date()``` displays: *2017-01-14T17:27:40.412Z*
+
+
+## Become familiar with these features:   
+- the equivalent forms of milliseconds, seconds, the ISO format of string
+- constructor forms, including now()
+- toISOString()
+- get*()
+
+
+# RegExp
+Read [RegExp](http://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+Scan all of the features, but don't worry about memorizing them. Just know they exist.
+
+We always place regular expressions into their own variables, named with a suffix of *_REGEXP*.
+
+For example:
+```
+var LOCALE_REG_EXP = /^[a-z]{2}_[A-Z]{2}$/
+```
+matches locale strings such as *en_US*
+
+Regular expressions are complex. Use a [javascript RegExp tool](https://regex101.com/) to help you analyze them, and demonstrate correctness.
 
 
 # JSON
