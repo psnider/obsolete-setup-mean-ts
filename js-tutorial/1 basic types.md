@@ -48,7 +48,7 @@ Pay attention to testing of values in boolean expressions, as it's quirky in jav
 (instead of == and !=)
 - Use == and != when testing for non-existence  
 e.g. ```a == null``` or ```a != null```
-
+- understand [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) and [falsy](https://developer.mozilla.org/en-US/docs/Glossary/falsy) boolean comparisons
 
 # Date
 Read [Date](http://www.w3schools.com/jsref/jsref_obj_date.asp)
@@ -68,11 +68,25 @@ For string display for logs, and any computing related purpose, we use the ISO f
 - get*()
 
 
+# null and undefined
+Read [null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)
+
+## Guidelines:   
+- Avoid using null  
+Prefer undefined.
+*null*'s only use is to indicate that an object is deliberately missing, as opposed to simply not present in a data set, in which case absense is a sufficient indicator.
+For example, if you were to use an sparse array to indicate the playing piece on the square of a row of a chessboard, you might use null to indicate that no piece is on a square: ```[pawn,null,null,null,null,knight,null,null]```
+Another use is when you must serialize data that indicates something is missing, as undefined fields are ignored by JSON.stringify()
+- test for existance of a primitive type value with ```x == null``` or ```x != null```
+This construct tests x for both null and undefined.
+- test for existance of an object with ```x``` or ```!x```  
+If there is any chance the variable contains a primitive type, then use the previous form.
+- understand the unusual comparisons of undefined  
+
+
 # RegExp
 Read [RegExp](http://www.w3schools.com/jsref/jsref_obj_regexp.asp)
 Scan all of the features, but don't worry about memorizing them. Just know they exist.
-
-We always place regular expressions into their own variables, named with a suffix of *_REGEXP*.
 
 For example:
 ```
